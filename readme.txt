@@ -15,3 +15,17 @@ $ git commit -m "wrote a readme file"  //commit the files that you added,then,gi
 
 $  git status // check the repository status,if changed,then it will warn.
 $  git diff //it will show the differences
+$  git log //show the git log
+
+$  git reset --hard HEAD^  //back the last edition   HEAD~100  the 100st before edition
+
+git版本推入库中
+$  git remote add origin https://github.com/Changcumt/Denew.git  //this is your github.git
+$  git push -u origin master //push your origin in github  -- 1st time
+$  git push origin master
+$  git  remote remove origin  //remove your origin
+
+
+git  clone 
+$  git clone https://github.com/Changcumt/Denew.git
+
