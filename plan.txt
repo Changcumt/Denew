@@ -1,0 +1,8 @@
+this is my plan for webfront...
+..//2015-12-23 21:54//....
+
+1, study nodejs and how to  manage packges
+2, study angualrjs,and use it in previous preject
+3, review the book about Javascript 
+4, review CSS3 and HTML5 API 
+5, study from SNS like w3plus(http://www.w3cplus.com/)  and stackoverflow(http://stackoverflow.com/)  and etc..
