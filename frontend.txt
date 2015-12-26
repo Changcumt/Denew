@@ -1,0 +1,15 @@
+Grunt 系统学习：http://www.gruntjs.net/getting-started；
+NodeJs学习 http://www.lvtao.net/content/book/node.js.htm
+AMD/CMD的区别以及适用的站点。
+AMD RequireJs  CMD SeaJS
+ reactJS===》 http://www.ruanyifeng.com/blog/2015/03/react.html
+SASS------》
+glup入门指南 https://github.com/nimojs/gulp-book
+
+angular / backbone / react / express
+jQuery社区了解更高级的jQuery使用
+
+《高性能网站设计》再次通读研究
+
+大公司如何部署代码  https://github.com/fouber/blog/issues/6
+前端发展脉路 http://div.io/topic/1275
