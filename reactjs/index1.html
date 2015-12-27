@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>React模板</title>
+	<script src="src/react.js"></script>
+	<script src="src/react-dom.js"></script>
+	<script src="src/browser.min.js"></script>
+</head>
+<body>
+
+<div id="ex"></div>
+<script type="text/babel">
+	var HelloMessage=React.createClass({
+		render:function(){
+			return <h1>hello, {this.props.name}</h1>;
+		}
+	})
+	ReactDOM.render(
+		<HelloMessage name="Chang" />,
+		document.getElementById("ex")
+		);
+</script>
+
+
+	
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>React模板子元素</title>
+	<script src="src/react.js"></script>
+	<script src="src/react-dom.js"></script>
+	<script src="src/browser.min.js"></script>
+</head>
+<body>
+
+<div id="ex"></div>
+<script type="text/babel">
+	var HelloMessage=React.createClass({
+		render:function(){
+			return (
+				<ol>
+				{
+					React.Children.map(this.props.children,function(child){
+						return <li>{child}++{child.props.name}</li>
+					})
+				}
+				</ol>
+			);
+		}
+	})
+	ReactDOM.render(
+		<HelloMessage name="Chang" >
+			<span name="nn">Chang</span>
+			<span name="mm">Han</span>
+		</HelloMessage>,
+		document.getElementById("ex")
+		);
+</script>
+
+
+	
+</body>
+</html>
