@@ -1,0 +1,57 @@
+I, 构造
+	var vm = new Vue({
+	el:'' //要操作的元素
+	data:{} //数据集合
+	methods:{} //方法集合
+	computed:{} //计算属性
+})
+一个vm就是MVVM中的一个VM（ViewModel）,是实例化Vue的时候传入的是一个对象，这个对象包含数据(data)，模板()，方法(methods)，挂载元素(el),生命周期钩子(created,beforeCompile,compiled,ready,beforeDestory,destoryed)等。
+
+II, 组件
+	var MyComponent = Vue.extend({});
+	var MyComponentInstance = new MyComponent();
+Vue可以扩展，预定义可复用的组件构造器。
+
+III，$符号的用法：带$表示的Vue实例的属性或方法，不带$表示的代理的数据对象的属性信息。
+
+V,数据绑定
+	1,在模板中加入*号，此时该元素只会处理单次赋值，之后的数据改动不会在影响这个元素变化，eg,{{*message}}
+	2,如果要显示HTML字符串，需要使用三个mustache符号，如 eg,message="<br>Hello</br>",{{{message}}}
+	3,Mustache 标签也可以放在HTML属性中，eg:<div id="item-{{ id }}"></div>
+	4,标签中还可以加入 Javascript表达式 eg,{{ ok ? 'YES' : 'NO' }},{{ message.split('').reverse().join('') }}
+	5,过滤器：{{ message | capitalize }} 最后会显示首字母大写的message的信息内容
+VI,计算属性
+	1,HTML a={{a}},b={{b}} //b是计算属性
+	 new Vue({
+	 	data:{ a:1 },
+	 	computed:{b:function(){ return this.a+1 }}
+	 })
+VII,绑定Class与Style
+	1,动态绑定Class有两种方式 class="{{classname}}" v-bind:class=""两者只呢个选其一，其中v-bind方式可以传递一个对象
+	v-bing:class="{'class-a':isA,'class_b',isB}" 如果isA为true，则添加类名class-a,b同理。isA isB在data中定义。
+	还可以给v-bind:class传递一个数组。
+	2，绑定内联样式。v-bind:style="{javascript格式的样式对象，类似jquery的css()中传递的对象"
+VIII，条件渲染
+	1, <h1 v-if="ok">Yes</h1><h1 v-else>No</h1>
+		通过v-if v-else来控制逻辑。
+	2, 多个元素用<template>标签来包含它们。
+	<template v-if="ok"><h1></h1><p></p><p></p><p></p></template>
+	3, v-show 设置元素是否显示 <div v-show="ok"></div>
+	4, v-else 必须在v-if或v-show之后才会起作用。
+X, 列表渲染
+	1, v-for="item in items"  在v-for代码块中有个特殊元素$index来表示当前元素的索引。
+
+
+	
+v-  Vue指令
+1,数据绑定 v-model="v" 给input设置此属性，则input值改变的时候，相应区域对应的也会改变。
+2,渲染列表 v-for="item in list",get data by {{item.v}} 显示数组元素
+3,事件绑定 v-on:event="function"
+4,v-if=""  判断
+5,v-bind:href="url",把标签的href属性绑定给data中的url属性。
+6,v-bind 缩写  v-bind:href="url" ==> :href="url"
+7,v-on缩写 v-on:click="doSomething" ==> @click="doSomething"
+
+
+Vue方法：
+vm.$watch();监听数据变动,

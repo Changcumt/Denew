@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue入门-数据绑定</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+<h1>数据绑定</h1>
+<div id="app">
+	{{ message | capitalize }}
+	<input type="text" v-model="message">
+</div>
+
+
+<script>
+	new Vue({
+		el:"#app",
+		data:{
+			message:"Hello Vue.js"
+		}
+	})
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>React state</title>
+	<script src="src/react.js"></script>
+	<script src="src/react-dom.js"></script>
+	<script src="src/browser.min.js"></script>
+</head>
+<body>
+<p></p>
+<div id="ex"></div>
+<div id="ex2"></div>
+<script type="text/babel">
+	var LikeButton=React.createClass({
+		getInitialState:function(){
+			return {liked:false};
+		},
+		handleClick:function(event){
+			this.setState({liked:!this.state.liked});
+		},
+		render:function(){
+			var text = this.state.liked ? 'like' : 'have not like';
+			return (
+				<p onClick={this.handleClick}>
+				You {text} this. Click to toggle. 
+				</p>
+				);
+		}
+	});
+
+	var MyInput=React.createClass({
+		getInitialState:function(){
+			return {value:'Hello'};
+		},
+		handleOfChange:function(event){
+			this.setState({value:event.target.value});
+		},
+		render:function(){
+			var value=this.state.value;
+			return(
+				<div>
+					<input value={value} type="text" onChange={this.handleOfChange} />
+					<p>{value}</p>
+				</div>
+				)
+		}
+	});
+
+	ReactDOM.render(
+		<LikeButton  />,
+		document.getElementById("ex")
+		);
+	ReactDOM.render(
+		<MyInput  />,
+		document.getElementById("ex2")
+		);
+</script>
+
+
+	
+</body>
+</html>
